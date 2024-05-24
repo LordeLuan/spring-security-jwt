@@ -13,7 +13,7 @@ public class AutenticacaoService implements UserDetailsService {
 	@Autowired
 	private UsuarioRepository repository;
 	
-	// Recebe o usuario/email informado ao tentar se autenticar 
+	// Recebe o usuario/email informado ao tentar se autenticar e faz a busca por dele no banco de dados 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		return repository.findByLogin(username);
